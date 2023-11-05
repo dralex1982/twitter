@@ -25,7 +25,6 @@ class App extends Component {
         temp.avatar = url || temp.avatar;
         this.setState({user: temp});
     }
-
     changeName = name =>{
         const temp = {...this.state.user};
         temp.name = name || temp.name;
