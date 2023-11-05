@@ -8,10 +8,10 @@ const UserAvatar = ({size}) => {
                            src={value.user.avatar}
                            alt={value.user.name}
                            onClick={() => value.changeAvatar(prompt('Enter new avatar url: '))}
-            onContextMenu={event =>{
-                event.preventDefault();
-                value.changeName(prompt('Enter new nickname: '));
-            }}/>}
+                           onContextMenu={event => {
+                               event.preventDefault();
+                               value.changeName(prompt('Enter new nickname: '));
+                           }}/>}
         </TwitterContext.Consumer>
     );
 };
