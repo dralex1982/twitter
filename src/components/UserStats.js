@@ -12,7 +12,7 @@ const UserStats = () => {
                 </div>
                 <div className={'stats'}>
                     <div
-                        onClick={ (event)=> {
+                        onClick={ ()=> {
                             value.addNumber('followers');
                         }}
                         onContextMenu={event => {
@@ -21,7 +21,7 @@ const UserStats = () => {
                         }}>
                         Followers: {value.stats.followers}</div>
                     <div
-                        onClick={ (event)=> {
+                        onClick={ ()=> {
                             value.addNumber('following');
                         }}
                         onContextMenu={event => {
