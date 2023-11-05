@@ -25,10 +25,23 @@ class App extends Component {
         temp.avatar = url || temp.avatar;
         this.setState({user: temp});
     }
-    changeName = name =>{
+    changeName = name => {
         const temp = {...this.state.user};
         temp.name = name || temp.name;
         this.setState({user: temp});
+    }
+
+    addNumber = property => {
+        const temp = {...this.state.stats};
+        temp[property] += 1;
+        this.setState({stats: temp});
+    }
+
+    subNumber = (property) => {
+        const temp = {...this.state.stats};
+        if (temp[property] > 0)
+            temp[property] -= 1;
+        this.setState({stats: temp});
     }
 
     render() {
@@ -38,7 +51,9 @@ class App extends Component {
                     user: this.state.user,
                     stats: this.state.stats,
                     changeAvatar: this.changeAvatar,
-                    changeName: this.changeName
+                    changeName: this.changeName,
+                    addNumber: this.addNumber,
+                    subNumber: this.subNumber
                 }}>
                     <Nav/>
                     <Body/>

@@ -11,8 +11,24 @@ const UserStats = () => {
                     {value.user.name}
                 </div>
                 <div className={'stats'}>
-                    <div>Followers: {value.stats.followers}</div>
-                    <div>Following: {value.stats.following}</div>
+                    <div
+                        onClick={ (event)=> {
+                            value.addNumber('followers');
+                        }}
+                        onContextMenu={event => {
+                            event.preventDefault();
+                            value.subNumber('followers');
+                        }}>
+                        Followers: {value.stats.followers}</div>
+                    <div
+                        onClick={ (event)=> {
+                            value.addNumber('following');
+                        }}
+                        onContextMenu={event => {
+                            event.preventDefault();
+                            value.subNumber('following');
+                        }}
+                    >Following: {value.stats.following}</div>
                 </div>
             </div>}
         </TwitterContext.Consumer>
