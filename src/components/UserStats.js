@@ -1,37 +1,38 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import UserAvatar from "./UserAvatar";
 import {TwitterContext} from "../utils/twitterContext";
 
 const UserStats = () => {
+
+    const {user, stats, addNumber, subNumber} = useContext(TwitterContext);
+
     return (
-        <TwitterContext.Consumer>
-            {value => <div className={'user-stats'}>
-                <div>
-                    <UserAvatar/>
-                    {value.user.name}
-                </div>
-                <div className={'stats'}>
-                    <div
-                        onClick={ ()=> {
-                            value.addNumber('followers');
-                        }}
-                        onContextMenu={event => {
-                            event.preventDefault();
-                            value.subNumber('followers');
-                        }}>
-                        Followers: {value.stats.followers}</div>
-                    <div
-                        onClick={ ()=> {
-                            value.addNumber('following');
-                        }}
-                        onContextMenu={event => {
-                            event.preventDefault();
-                            value.subNumber('following');
-                        }}
-                    >Following: {value.stats.following}</div>
-                </div>
-            </div>}
-        </TwitterContext.Consumer>
+        <div className={'user-stats'}>
+            <div>
+                <UserAvatar/>
+                {user.name}
+            </div>
+            <div className={'stats'}>
+                <div
+                    onClick={() => {
+                        addNumber('followers');
+                    }}
+                    onContextMenu={event => {
+                        event.preventDefault();
+                        subNumber('followers');
+                    }}>
+                    Followers: {stats.followers}</div>
+                <div
+                    onClick={() => {
+                        addNumber('following');
+                    }}
+                    onContextMenu={event => {
+                        event.preventDefault();
+                        subNumber('following');
+                    }}
+                >Following: {stats.following}</div>
+            </div>
+        </div>
     );
 };
 
