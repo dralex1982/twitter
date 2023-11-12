@@ -32,7 +32,6 @@ const App = () => {
         })
     };
 
-
     return (
         <div className={'app'}>
             <TwitterContext.Provider value={{
@@ -46,7 +45,6 @@ const App = () => {
                 <Nav/>
                 <Body/>
             </TwitterContext.Provider>
-
         </div>
     );
 }
