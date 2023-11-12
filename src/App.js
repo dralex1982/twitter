@@ -15,8 +15,8 @@ const App = () => {
     });
 
     const changeAvatar = url => setUser({avatar: url || user.avatar, name: user.name});
-    const changeName = name => setUser(user=>
-    ({...user, name: name || user.name}));
+    const changeName = name => setUser(user =>
+        ({...user, name: name || user.name}));
 
     const addNumber = property => {
         setStats(stats => {
@@ -34,14 +34,7 @@ const App = () => {
 
     return (
         <div className={'app'}>
-            <TwitterContext.Provider value={{
-                user: user,
-                stats: stats,
-                changeAvatar: changeAvatar,
-                changeName: changeName,
-                addNumber: addNumber,
-                subNumber: subNumber
-            }}>
+            <TwitterContext.Provider value={{user, stats, changeAvatar, changeName, addNumber, subNumber}}>
                 <Nav/>
                 <Body/>
             </TwitterContext.Provider>
