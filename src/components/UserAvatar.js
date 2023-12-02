@@ -4,6 +4,7 @@ import {changeAvatarAction, changeNameAction} from "../redux/actions/userAction"
 
 
 const UserAvatar = ({size}) => {
+
     const {name, avatar} = useSelector(state => state.user);
     const dispatch = useDispatch();
 
@@ -13,8 +14,8 @@ const UserAvatar = ({size}) => {
                  let url = (prompt('Enter new avatar url: '));
                  dispatch(changeAvatarAction(url));
              }}
-             onContextMenu={event => {
-                 event.preventDefault();
+             onContextMenu={e => {
+                 e.preventDefault();
                  let newName = (prompt('Enter new nickname: '));
                  dispatch(changeNameAction(newName));
              }}/>

@@ -10,10 +10,10 @@ export const twitterReducer = (state, action) => {
             return {...state, stats};
         case CHANGE_AVATAR:
             user = {...state.user, avatar: action.payload || state.user.avatar};
-            return {...state.user, user};
+            return {...state, user};
         case CHANGE_NAME:
             user = {...state.user, name: action.payload || state.user.name};
-            return {...state.user, user};
+            return {...state, user};
         default:
             return state;
     }
