@@ -1,8 +1,7 @@
 import './App.css';
-import React, {useState} from 'react';
+import React from 'react';
 import Nav from "./components/Nav";
 import Body from "./components/Body";
-import {TwitterContext} from "./utils/twitterContext";
 
 const App = () => {
     return (

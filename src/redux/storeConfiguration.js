@@ -1,16 +1,9 @@
-import {twitterReducer} from "./twitterReducer";
-import {createStore} from "redux";
+import {configureStore} from "@reduxjs/toolkit";
+import account from './slice/userSlice'
 
-const initialState =
+const store = configureStore(
     {
-        user: {
-            avatar: 'https://gravatar.com/avatar/0?d=monsterid',
-            name: 'Monster'
-        },
-        stats: {
-            followers: 1000,
-            following: 100
-        }
-    };
-
-export const store = createStore(twitterReducer, initialState);
+        reducer: {account}
+    }
+);
+export default store;
